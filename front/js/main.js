@@ -54,7 +54,6 @@ function checkfiltres(genre, id){                          //regarde si un autre
         id3 = 3
         if(genre == 'map'){
             france.display(imgRegions);
-<<<<<<< HEAD
             currentMap = imgRegions;
             affichage(matpxl, currentFiltre);
         }
@@ -62,8 +61,6 @@ function checkfiltres(genre, id){                          //regarde si un autre
             france.display(currentMap);
             affichage(matpxl, "population");
             currentFiltre = "population";
-=======
->>>>>>> de61584e5e3fbb8b3d5bf68a638427773cf6f6ba
         }
     }
     else if(id == 2){
@@ -71,7 +68,6 @@ function checkfiltres(genre, id){                          //regarde si un autre
         id3 = 3
         if(genre == 'map'){
             france.display(imgPropa);
-<<<<<<< HEAD
             currentMap = imgPropa;
             affichage(matpxl, currentFiltre);
         }
@@ -79,8 +75,6 @@ function checkfiltres(genre, id){                          //regarde si un autre
             france.display(currentMap);
             affichage(matpxl, "contamines");
             currentFiltre = "contamines";
-=======
->>>>>>> de61584e5e3fbb8b3d5bf68a638427773cf6f6ba
         }
     }
     else{
@@ -88,7 +82,6 @@ function checkfiltres(genre, id){                          //regarde si un autre
         id3 = 2
         if(genre == 'map'){
             france.display(imgSatellite);
-<<<<<<< HEAD
             currentMap = imgSatellite;
             affichage(matpxl, currentFiltre);
         }
@@ -96,8 +89,6 @@ function checkfiltres(genre, id){                          //regarde si un autre
             france.display(currentMap);
             affichage(matpxl, "morts");
             currentFiltre = "morts";
-=======
->>>>>>> de61584e5e3fbb8b3d5bf68a638427773cf6f6ba
         }
     }
 
