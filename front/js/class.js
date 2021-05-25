@@ -107,6 +107,24 @@ class Region{
         this.population = population;
         this.populationMax = populationMax;
         this.recovered = recovered;
+        this.action = new Array()
+
+        for (let i = 0; i<100;i++){
+            this.action[i] = false
+        }
+    }
+
+    getAction(){
+        console.table(this.action)
+    }
+
+    actionB(id){
+        if (this.action[id] == true){
+            this.action[id] = false;
+        }
+        else{
+            this.action[id] = true;
+        }
     }
 
 }

@@ -1,14 +1,30 @@
 socket.emit('json', '');                                    //demande au server de l'envoie du JSON des actions
 
 socket.on('jsonaction', json =>{                            //reception JSON
-    //console.table(json.cartes)
 
     document.getElementById("action").innerHTML = document.getElementById("action").innerHTML + "<h3 style='text-align:center;margin-bottom:7%; font-family:turfu;' id='actionh3'>Actions dans la region </h3>"
+    
     for (let i=0; i<json.cartes.length; i++){
         let id = json.cartes[i].id
-        document.getElementById("action").innerHTML = document.getElementById("action").innerHTML + "<div class='listeningaction'><a onclick='supression("+id+")'><img src='../style/asset/flechecote.png' style='width:3%;' id='"+id+"img'>  " + json.cartes[i].titre +  "</a><input type='checkbox' class='apple-switch' style='position:relative; float:right; margin-top:-1%; margin-right:2%;' onclick='repCheckbox("+id+")' id='"+id+"check'><br><div style='display:none;' id='"+id+"'>"+ json.cartes[i].resume+ "</div></div>"   
+        
+        document.getElementById("action").innerHTML = document.getElementById("action").innerHTML + "<div class='listeningaction'><a onclick='supression("+id+")'><img src='../style/asset/flechecote.png' style='width:3%;' id='"+id+"img'>  " + json.cartes[i].titre +  "</a><input type='checkbox' class='apple-switch' style='position:relative; float:right; margin-top:-1%; margin-right:2%;' onclick='repCheckbox("+id+")' id='"+id+"check'><br><div style='display:none;' id='"+id+"' checked='false'>"+ json.cartes[i].resume+ "</div></div>"   
+        document.getElementById(id+"check").removeAttribute("checked","")
     }
-                                                            //ecriture dans l'html des infosmations du JSON
+
+    if(currentRegion.name != undefined){
+        matriceRegions.forEach(region => {
+            if(region.name == currentRegion.name){
+                for (let i = 1; i<json.cartes.length+1; i++){
+                    console.table(region.action)
+                    if (region.action[i] == true){  
+                        id = i+1;
+                        document.getElementById(id+"check").setAttribute("checked","")
+                    }
+                }
+            }
+            });
+    }
+    
     
 });
 
@@ -35,7 +51,15 @@ function supression(id){                                    //fait apparaitre ou
 }
 
 function repCheckbox(id){                                   //message si checkbox est coche
-    if(document.getElementById(id).checked == true){
+
+   if(currentRegion.name != undefined){
+    matriceRegions.forEach(region => {
+
+        if(region.name == currentRegion.name){
+            region.actionB(id-1)
+            console.table(region.getAction())
+        }
+        });
     }
     
 }

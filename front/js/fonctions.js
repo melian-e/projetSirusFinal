@@ -12,6 +12,9 @@ const getClickCoords = (elem, event) => { //renvoie les coords de l'event dans l
 };
 
 const onClick = (e) => {
+
+    socket.emit('json', '');    
+    
     let { x, y } = getClickCoords(canvas, e);
 
     let tmp = document.getElementById("canvas1");
@@ -84,6 +87,7 @@ function affBordure(region){
     document.getElementById("actionh3").innerHTML = "Actions dans la region " + region.name;
     let ad="<div><h3 style='text-align:center;font-family:turfu; margin-bottom:3%;'>Infos Régions "+region.name+"</h3> </br><i class=\"far fa-angry\"></i>Mécontentement : "+region.mecontentement+"%</br><i class=\"fas fa-head-side-virus\"></i>Contaminés : "+region.contamines+"</br><i class=\"fas fa-skull-crossbones\"></i>Morts : "+region.morts+"</br><i class=\"fas fa-users\"></i>Population : "+region.population+"</div>";
     document.getElementById("regionAff").innerHTML=ad;
+    
 }
 
 
