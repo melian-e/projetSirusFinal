@@ -22,7 +22,24 @@ socket.on('jsonaction', json =>{                            //reception JSON
                     }
                 }
             }
-            });
+        });
+    }
+    else{
+        let bool = true
+
+        matriceRegions.forEach(region => {
+            if(region.name == currentRegion.name){
+                if (region.action[i] != true){  
+                    id = i+1;
+                    bool = false
+                }
+            
+            }
+        });
+
+        if (bool == true){
+            document.getElementById(id+"check").setAttribute("checked","")
+        }
     }
     
     
@@ -53,13 +70,21 @@ function supression(id){                                    //fait apparaitre ou
 function repCheckbox(id){                                   //message si checkbox est coche
 
    if(currentRegion.name != undefined){
-    matriceRegions.forEach(region => {
+        matriceRegions.forEach(region => {
 
-        if(region.name == currentRegion.name){
-            region.actionB(id-1)
-            console.table(region.getAction())
-        }
+            if(region.name == currentRegion.name){
+                region.actionB(id-1)
+
+            }
         });
+    }
+    else{
+        matriceRegions.forEach(region => {
+            region.actionB(id-1)
+            console.log(region.name)
+            console.table(region.getAction())
+            
+         });
     }
     
 }
