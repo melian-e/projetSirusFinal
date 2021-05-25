@@ -14,10 +14,9 @@ const getClickCoords = (elem, event) => { //renvoie les coords de l'event dans l
 const onClick = (e) => {
     let { x, y } = getClickCoords(canvas, e);
 
-    let tmp = document.getElementById("canvas1");
     //console.log(x * ( 400 / tmp.getBoundingClientRect().width))
-    x = Math.floor(x * ( 400 / tmp.getBoundingClientRect().width));
-    y = Math.floor(y * ( 400 / tmp.getBoundingClientRect().width ));
+    x = Math.floor(x * ( 400 / canvas.getBoundingClientRect().width));
+    y = Math.floor(y * ( 400 / canvas.getBoundingClientRect().width ));
 
     france.display(currentMap);
     affichage(matpxl, currentFiltre);
@@ -94,11 +93,18 @@ function affFrance(){
     document.getElementById("regionAff").innerHTML=ad;
 }
 
-const onClick2 = (e) => { 
+const onClick2 = (e) => {
+    let { x, y } = getClickCoords(canvas, e);
+
+    //console.log(x * ( 400 / tmp.getBoundingClientRect().width))
+    x = Math.floor(x * ( 400 / canvas.getBoundingClientRect().width));
+    y = Math.floor(y * ( 400 / canvas.getBoundingClientRect().width));
+
     x1 = Math.floor(e.clientX);
     y1 = Math.floor(e.clientY);
 
-    if ((x1 < 158 || x1 > 557) && x1 < 638 && y1 > 82 && (y1 < 262 || y1 > 561)){
+
+    if (((x < 0  || x > 398) || (y < 0 || y > 398)) && x1 < divEcran.getBoundingClientRect().width/2 && y1 > 82 ){
         console.log("Coordonnées  = " + x1 + ' ' + y1);
         france.display(currentMap);
         affichage(matpxl, currentFiltre);
