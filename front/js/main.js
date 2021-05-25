@@ -15,7 +15,6 @@ socket.on('jsonaction', json =>{                            //reception JSON
         matriceRegions.forEach(region => {
             if(region.name == currentRegion.name){
                 for (let i = 0; i<json.cartes.length+1; i++){
-                    console.table(region.action)
                     if (region.action[i] == true){  
                         id = i+1;
                         document.getElementById(id+"check").setAttribute("checked","")
@@ -87,7 +86,6 @@ function repCheckbox(id){                                   //message si checkbo
         matriceRegions.forEach(region => {
             region.actionB(id-1, document.getElementById(id+"check").checked)
             console.log(region.name)
-            console.table(region.getAction())
             
          });
     }

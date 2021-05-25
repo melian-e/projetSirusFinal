@@ -15,9 +15,6 @@ matriceRegions.push(new Region("Occitanie", "rgb(255, 199, 112)", 0, 0, 0, 0, 59
 matriceRegions.push(new Region("Provence-Alpes-Côte d'Azur", "rgb(217, 237, 20)", 0, 0, 0, 0, 5088998, 0));
 matriceRegions.push(new Region("Corse", "rgb(255, 165, 121)", 0, 0, 0, 0, 349269, 0));
 
-let villes = [];
-//ici creation des villes
-
 let dataFrance = new Object();
 dataFrance.mecontentement = france.mecontentement;
 dataFrance.contamines = france.contamines;
@@ -31,12 +28,12 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log(matpxl);
 
 
-    let a = initPopulation(matpxl, dataFrance, matriceRegions, villes);
+    let a = initPopulation(matpxl, dataFrance, matriceRegions);
     matpxl = clone(a.map);
     dataFrance = a.dataPays;
     matriceRegions = clone(a.regions);
 
-    a = apparitionVirus(5, matpxl, dataFrance, matriceRegions);
+    a = apparitionVirus(1, matpxl, dataFrance, matriceRegions);
     matpxl = clone(a.map);
     dataFrance = a.dataPays;
     matriceRegions = clone(a.regions);

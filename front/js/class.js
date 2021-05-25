@@ -119,19 +119,8 @@ class Region{
     }
 
     actionB(id, bool){
-        alert(bool)
+        //alert(bool)
         this.action[id] = bool
     }
 
-}
-
-class Ville{
-    constructor(rayon, densite, x, y, population){
-        this.rayon = rayon;
-        this.densite = densite;
-        this.x = x;
-        this.y = y;
-        this.population = population;
-    }
-    
 }

@@ -89,8 +89,6 @@ function affBordure(region){
     
 }
 
-
-
 function affFrance(){
     document.getElementById("actionh3").innerHTML = "Actions dans la France";
     let ad="<div><h3 style='text-align:center;font-family:turfu; margin-bottom:3%;'>Infos France</h3> </br><i class=\"far fa-angry\"></i>Mécontentement : "+france.mecontentement+"%</br><i class=\"fas fa-head-side-virus\"></i>Contaminés : "+france.contamines+"</br><i class=\"fas fa-skull-crossbones\"></i>Morts : "+france.morts+"</br><i class=\"fas fa-users\"></i>Population : "+france.population+"</div>";
@@ -123,7 +121,7 @@ const onClick2 = (e) => {
 canvas.addEventListener('click', onClick);
 divEcran.addEventListener('click', onClick2);
 
-function initPopulation(map, dataPays, regions, villes){
+function initPopulation(map, dataPays, regions){
     let maxReached = 0;
     console.log(dataPays);
     while(maxReached < 13){
@@ -154,13 +152,13 @@ function apparitionVirus(nbFoyer, map, dataPays, regions){
     for(let i = 0; i < nbFoyer; i++){
         const x = Math.floor(Math.random() * map.length);
         if(map[x].region != "" && map[x].pop > 0){
-            map[x].contamines += 1;
+            map[x].contamines += 10;
             regions.forEach(e => {
                 if(map[x].region == e.name){
-                    e.contamines += 1;
+                    e.contamines += 10;
                 }
             });
-            dataPays.contamines += 1;
+            dataPays.contamines += 10;
             console.log("Apparition d'un cas en : " + map[x].region + " " + x%400 + " " + Math.floor(x/400));
         } else {
             i--;
@@ -227,9 +225,56 @@ function affichage(map, type){
 
 function propagation(map, dataPays, regions /* + MUTATEURS */){
     console.log("propagation");
+
+    let chanceContamination = 5;
+    let chanceMort = 0.001;
+    let chanceGuerison = 0.003;
+    if(dataPays.contamines > 10000){
+        chanceMort *= 3;
+    }
+
         for(let i = 0; i < map.length; i++){
+            chanceContamination = 5;
+            matriceRegions.forEach(e => {
+                if(e.name == map[i].region){
+                    if(e.action[0] == true && e.action[5] == true){
+                        chanceContamination -= 1;
+                    } else if(e.action[0] == true){
+                        chanceContamination -= 1;
+                    } else if(e.action[5] == true){
+                        chanceContamination -= 0.15;
+                    }
+                    if(e.action[1] == true && e.action[3] == true){
+                        chanceContamination -= 0.25;
+                    } else if(e.action[1] == true){
+                        chanceContamination -= 0.15;
+                    } else if(e.action[3] == true){
+                        chanceContamination -= 0.1;
+                    }
+                    if(e.action[2] == true){
+                        chanceContamination -= 0.3;
+                    }
+                    if(e.action[0] == false && e.action[5] == false && e.action[6] == true){
+                        chanceContamination -= 0.05;
+                    }
+                    if(e.action[0] == false && e.action[5] == false && e.action[7] == true){
+                        chanceContamination -= 0.05;
+                    }
+                    if(e.action[0] == false && e.action[5] == false && e.action[10] == true){
+                        chanceContamination -= 0.02;
+                    }
+                    if(e.action[0] == false && e.action[5] == false && e.action[11] == true){
+                        chanceContamination -= 0.03;
+                    }
+                    if(e.action[0] == false && e.action[5] == false && e.action[12] == true){
+                        chanceContamination -= 0.08;
+                    }
+                }
+            });
+
+
             if((map[i].contamines > 0) && (i > 0) && ((i % 400) > 0)){
-                if((Math.random() * 100) * ((map[i].contamines / map[i].pop) / 2 + 0.5) > 93){
+                if((Math.random() * 100) * ((map[i].contamines / map[i].pop) / 2 + 0.5) > 93 && (Math.random() * 100 < chanceContamination)){
                     if((map[i-400].contamines + Math.floor(map[i - 400].pop / 1000)) < map[i-400].pop && map[i-400].region != ""){
                         regions.forEach(elem => {
                             if(map[i - 400].region == elem.name){
@@ -240,7 +285,7 @@ function propagation(map, dataPays, regions /* + MUTATEURS */){
                         dataPays.contamines += 1 + Math.floor(map[i - 400].pop / 1000);
                     }
                 }
-                if((Math.random() * 100) * ((map[i].contamines / map[i].pop) / 2 + 0.5) > 93){
+                if((Math.random() * 100) * ((map[i].contamines / map[i].pop) / 2 + 0.5) > 93 && (Math.random() * 100 < chanceContamination)){
                     if((map[i-1].contamines + Math.floor(map[i - 1].pop / 1000)) < map[i-1].pop && map[i-1].region != ""){
                         regions.forEach(elem => {
                             if(map[i - 1].region == elem.name){
@@ -251,7 +296,7 @@ function propagation(map, dataPays, regions /* + MUTATEURS */){
                         dataPays.contamines += 1 + Math.floor(map[i - 1].pop / 1000);
                     }
                 }
-                if((Math.random() * 100) * ((map[i].contamines / map[i].pop) / 2 + 0.5) > 93){
+                if((Math.random() * 100) * ((map[i].contamines / map[i].pop) / 2 + 0.5) > 93 && (Math.random() * 100 < chanceContamination)){
                     if((map[i+1].contamines + Math.floor(map[i + 1].pop / 1000)) < map[i+1].pop && map[i+1].region != ""){
                         regions.forEach(elem => {
                             if(map[i + 1].region == elem.name){
@@ -262,7 +307,7 @@ function propagation(map, dataPays, regions /* + MUTATEURS */){
                         dataPays.contamines += 1 + Math.floor(map[i + 1].pop / 1000);
                     }
                 }
-                if((Math.random() * 100) * ((map[i].contamines / map[i].pop) / 2 + 0.5) > 93){
+                if((Math.random() * 100) * ((map[i].contamines / map[i].pop) / 2 + 0.5) > 93 && (Math.random() * 100 < chanceContamination)){
                     if((map[i+400].contamines + Math.floor(map[i + 400].pop / 1000)) < map[i+400].pop && map[i+400].region != ""){
                         regions.forEach(elem => {
                             if(map[i + 400].region == elem.name){
@@ -273,7 +318,7 @@ function propagation(map, dataPays, regions /* + MUTATEURS */){
                         dataPays.contamines += 1 + Math.floor(map[i + 400].pop / 1000);
                     }
                 }
-                if((Math.random() * 100) * ((map[i].contamines / map[i].pop) / 2 + 0.5) > 45){
+                if((Math.random() * 100) * ((map[i].contamines / map[i].pop) / 2 + 0.5) > 45 && (Math.random() * 100 < chanceContamination)){
                     if((map[i-401].contamines + Math.floor(map[i - 401].pop / 1000)) < map[i-401].pop && map[i-401].region != ""){
                         regions.forEach(elem => {
                             if(map[i - 401].region == elem.name){
@@ -284,7 +329,7 @@ function propagation(map, dataPays, regions /* + MUTATEURS */){
                         dataPays.contamines += 1 + Math.floor(map[i - 401].pop / 1000);
                     }
                 }
-                if((Math.random() * 100) * ((map[i].contamines / map[i].pop) / 2 + 0.5) > 45){
+                if((Math.random() * 100) * ((map[i].contamines / map[i].pop) / 2 + 0.5) > 45 && (Math.random() * 100 < chanceContamination)){
                     if((map[i-399].contamines + Math.floor(map[i - 399].pop / 1000)) < map[i-399].pop && map[i-399].region != ""){
                         regions.forEach(elem => {
                             if(map[i - 399].region == elem.name){
@@ -295,7 +340,7 @@ function propagation(map, dataPays, regions /* + MUTATEURS */){
                         dataPays.contamines += 1 + Math.floor(map[i - 399].pop / 1000);
                     }
                 }
-                if((Math.random() * 100) * ((map[i].contamines / map[i].pop) / 2 + 0.5) > 45){
+                if((Math.random() * 100) * ((map[i].contamines / map[i].pop) / 2 + 0.5) > 45 && (Math.random() * 100 < chanceContamination)){
                     if((map[i+399].contamines + Math.floor(map[i + 399].pop / 1000)) < map[i+399].pop && map[i+399].region != ""){
                         regions.forEach(elem => {
                             if(map[i + 399].region == elem.name){
@@ -306,7 +351,7 @@ function propagation(map, dataPays, regions /* + MUTATEURS */){
                         dataPays.contamines += 1 + Math.floor(map[i + 399].pop / 1000);
                     }
                 }
-                if((Math.random() * 100) * ((map[i].contamines / map[i].pop) / 2 + 0.5) > 45){
+                if((Math.random() * 100) * ((map[i].contamines / map[i].pop) / 2 + 0.5) > 45 && (Math.random() * 100 < chanceContamination)){
                     if((map[i+401].contamines + Math.floor(map[i + 401].pop / 1000)) < map[i+401].pop && map[i+401].region != ""){
                         regions.forEach(elem => {
                             if(map[i + 401].region == elem.name){
@@ -318,22 +363,37 @@ function propagation(map, dataPays, regions /* + MUTATEURS */){
                     }
                 }
             }
-            if(Math.random() < 0.001 && map[i].contamines > 0){
-                
+            if(Math.random() < chanceMort && map[i].contamines > 0){
                 regions.forEach(elem => {
                     if(map[i].region == elem.name){
                         
-                        map[i].morts += 1 + 10*Math.floor(elem.contamines / (elem.population));
+                        map[i].morts += 1 + 30*Math.floor(elem.contamines / (elem.population));
+                        map[i].contamines -= 1 + 30*Math.floor(elem.contamines / (elem.population));
+                        map[i].pop -= 1 + 30*Math.floor(elem.contamines / (elem.population));
+
+                        elem.contamines -= 1 + 30*Math.floor(elem.contamines / (elem.population));
+                        elem.morts += 1 + 30*Math.floor(elem.contamines / (elem.population));
+                        elem.population -= 1 + 30*Math.floor(elem.contamines / (elem.population));
+
+                        dataPays.contamines -= 1 + 30*Math.floor(elem.contamines / (elem.population));
+                        dataPays.population -= 1 + 30*Math.floor(elem.contamines / (elem.population));
+                        dataPays.morts += 1 + 30*Math.floor(elem.contamines / (elem.population));
+                    }
+                });
+            }
+            if(Math.random() < chanceGuerison && map[i].contamines > 0){
+                regions.forEach(elem => {
+                    if(map[i].region == elem.name){
+                        
+                        map[i].recovered += 1 + 10*Math.floor(elem.contamines / (elem.population));
                         map[i].contamines -= 1 + 10*Math.floor(elem.contamines / (elem.population));
-                        map[i].pop -= 1 + 10*Math.floor(elem.contamines / (elem.population));
 
-                        elem.contamines -= 1 + 10*Math.floor(elem.contamines / (elem.population));
-                        elem.morts += 1 + 10*Math.floor(elem.contamines / (elem.population));
-                        elem.population -= 1 + 10*Math.floor(elem.contamines / (elem.population));
+                        elem.recovered += 1 + 10*Math.floor(elem.contamines / (elem.population));
 
+                        dataPays.recovered += 1 + 10*Math.floor(elem.contamines / (elem.population));
                         dataPays.contamines -= 1 + 10*Math.floor(elem.contamines / (elem.population));
-                        dataPays.population -= 1 + 10*Math.floor(elem.contamines / (elem.population));
-                        dataPays.morts += 1 + 10*Math.floor(elem.contamines / (elem.population));
+                        
+                        elem.contamines -= 1 + 10*Math.floor(elem.contamines / (elem.population));
                     }
                 });
             }
