@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="../style/styleGame.css">
+    <script src="/socket.io/socket.io.js"></script>
+    <title>Sirus Project</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.4.23/p5.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.4.23/addons/p5.dom.min.js"></script>
+    <script src="https://kit.fontawesome.com/6f0b868f0c.js" crossorigin="anonymous"></script>
+    <script src="../js/class.js"></script>
+    <script src="../js/imagesBase64.js"></script>
+</head>
+<body>
+
+    <div class="grid-container" id="ecran" style="position:absolute;height:95%">
+        <div class="Infos-avancement-partie" ><h3 style="text-align:center; font-family:turfu; color: white">Avancement</h3></div>
+        <div class="Map" style="padding-top:10%;"></div>
+        <div class="Infos-region" id="regionAff"><h3 style="text-align:center; font-family:turfu;" id="actionh3">Infos-region</h3></div>
+        <div class="Filtres scroller" id="filtres"></div>
+        <div class="Liste-actions-région scroller" id="action"></div>
+        <div class="Infos-avancement-partie">Avancement</div>
+        <div class="Map">
+            <!--Map-->
+            <canvas id="canvas1" style="position:absolute; left:150px; top:90px"></canvas>
+        </div>
+    </div>
+
+    
+
+    <script>
+        let socket = io(); 
+    </script>
+    <script src="../js/main.js"></script>
+    <script src="../js/fonctions.js"></script>
+    <script src="../js/propagation.js"></script>
+
+</body>
+</html>

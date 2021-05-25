@@ -1,0 +1,148 @@
+{
+    "cartes": [
+      {
+        "titre": "Confinement",
+        "resume": "Confinez toute la zone sélectionné",
+        "id": 1,
+        "propagation": 0.8,
+        "mecontentement": 1.2,
+        "argent": 0.8
+      },
+      {
+        "titre": "Télétravail",
+        "resume": "Vous placez tout les travailleurs qui le peuvent en télétravail",
+        "id": 2,
+        "propagation": 0.8,
+        "mecontentement": 1,
+        "argent": 0.8
+      },
+      {
+        "titre": "Gestes barrières",
+        "resume": "Vous imposez les gestes barrières à tous les habitants de la région",
+        "id": 3,
+        "propagation": 0.8,
+        "mecontentement": 1.2,
+        "argent": 1
+      },
+      {
+        "titre": "Fermeture des écoles",
+        "resume": "Fermetures des écoles maternelles, primaires, collèges et lycées pour des cours à la maison",
+        "id": 4,
+        "propagation": 0.8,
+        "mecontentement": 1.2,
+        "argent": 1
+      },
+      {
+        "titre": "Fermetures des frontières régionnales",
+        "resume": "Les déplacements avec les régions frontalières sont controlés et régulés",
+        "id": 5,
+        "propagation": 0.8,
+        "mecontentement": 1.2,
+        "argent": 0.8
+      },
+      {
+        "titre": "Fermetures des frontières nationnales",
+        "resume": "Les déplacements avec les pays frontaliers sont controlés et régulés",
+        "id": 6,
+        "propagation": 0.8,
+        "mecontentement": 1.2,
+        "argent": 1
+      },
+      {
+        "titre": "Couvre-feu",
+        "resume": "Mis en place d'un couvre-feu entre 18h et 6h",
+        "id": 7,
+        "propagation": 0.8,
+        "mecontentement": 1.2,
+        "argent": 0.8
+      },
+      {
+        "titre": "Fermetures des bars et restaurants",
+        "resume": "Les bars et les restaurants sont fermés afin de ralentire la propagation",
+        "id": 8,
+        "propagation": 0.8,
+        "mecontentement": 1.2,
+        "argent": 0.8
+      },
+      {
+        "titre": "Fermetures des commerces non-essentiels",
+        "resume": "Seul les commerces vendant des produits de première nécessité restent ouverts",
+        "id": 9,
+        "propagation": 0.8,
+        "mecontentement": 1.2,
+        "argent": 0.8
+      },
+      {
+        "titre": "Intervention de l'armée",
+        "resume": "L'armée est déployée sur le territoire français afin de faire respecté les règles",
+        "id": 10,
+        "propagation": 0.8,
+        "mecontentement": 1.2,
+        "argent": 0.8
+      },
+      {
+        "titre": "Fermetures des commerces non-essentiels",
+        "resume": "Seul les commerces vendant des produits de première nécessité restent ouverts",
+        "id": 11,
+        "propagation": 0.8,
+        "mecontentement": 1.2,
+        "argent": 0.8
+      },
+      {
+        "titre": "Renforcement des contrôles",
+        "resume": "Les contrôles sont accentués et les verbalisations sont augmentées",
+        "id": 12,
+        "propagation": 0.8,
+        "mecontentement": 1.2,
+        "argent": 1.2
+      },
+      {
+        "titre": "Fermetures des parcs",
+        "resume": "Les parcs sont fermés afin de limiter les réunions en extèrieur",
+        "id": 13,
+        "propagation": 0.8,
+        "mecontentement": 1.2,
+        "argent": 1
+      },
+      {
+        "titre": "Arrêt des activités sportive encadrées",
+        "resume": "Les clubs de sport, les rencontre sportive sont arrêtés afin de limiter les contacts entre les sportifs",
+        "id": 14,
+        "propagation": 0.8,
+        "mecontentement": 1.2,
+        "argent": 1
+      },
+      {
+        "titre": "Primes aux citoyens",
+        "resume": "Le gouvernement offre une prime aux citoyens dans le besoin",
+        "id": 15,
+        "propagation": 1,
+        "mecontentement": 0.8,
+        "argent": 0.6
+      },
+      {
+        "titre": "Augmentation du SMIC",
+        "resume": "Le gouvernement augment le SMIC afin d'aider les personnes dans le besoin ",
+        "id": 16,
+        "propagation": 1,
+        "mecontentement": 0.8,
+        "argent": 0.8
+      },
+      {
+        "titre": "Maintient d'un évènement du calendrier",
+        "resume": "Le gouvernement prend la décision de maintenir une fête du calendrier",
+        "id": 17,
+        "propagation": 1.2,
+        "mecontentement": 0.8,
+        "argent": 1.2
+      },
+      {
+        "titre": "Suppression des mesures",
+        "resume": "Le gouvernement enlève toutes les mesures prisent afin de limiter la propagation du virus",
+        "id": 18,
+        "propagation": 0.8,
+        "mecontentement": 0.8,
+        "argent": 1.2
+      }
+    ]
+  }

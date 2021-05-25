@@ -1,0 +1,15 @@
+diff a/package.json b/package.json	(rejected hunks)
+@@ -9,13 +9,8 @@
+   "author": "",
+   "license": "ISC",
+   "dependencies": {
+-<<<<<<< HEAD
+-    "chart.js": "^3.2.1",
+-    "express": "^4.17.1"
+-=======
+     "express": "^4.17.1",
+     "fs": "0.0.1-security",
+     "socket.io": "^4.1.2"
+->>>>>>> b78568d8417af201ec54939b73c33f7fe48e1567
+   }
+ }
