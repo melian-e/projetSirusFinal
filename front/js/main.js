@@ -2,7 +2,7 @@ socket.emit('json', '');                                    //demande au server 
 
 socket.on('jsonaction', json =>{                            //reception JSON
 
-    document.getElementById("action").innerHTML = document.getElementById("action").innerHTML + "<h3 style='text-align:center;margin-bottom:7%; font-family:turfu;' id='actionh3'>Actions dans la region </h3>"
+    document.getElementById("action").innerHTML = "<h3 style='text-align:center;margin-bottom:7%; font-family:turfu;' id='actionh3'>Actions dans la region </h3>"
     
     for (let i=0; i<json.cartes.length; i++){
         let id = json.cartes[i].id
@@ -14,7 +14,7 @@ socket.on('jsonaction', json =>{                            //reception JSON
     if(currentRegion.name != undefined){
         matriceRegions.forEach(region => {
             if(region.name == currentRegion.name){
-                for (let i = 1; i<json.cartes.length+1; i++){
+                for (let i = 0; i<json.cartes.length+1; i++){
                     console.table(region.action)
                     if (region.action[i] == true){  
                         id = i+1;
@@ -25,21 +25,24 @@ socket.on('jsonaction', json =>{                            //reception JSON
         });
     }
     else{
-        let bool = true
-
-        matriceRegions.forEach(region => {
-            if(region.name == currentRegion.name){
+        
+        for (let i=0;i<json.cartes.length;i++){
+            let bool = true
+            matriceRegions.forEach(region => {
                 if (region.action[i] != true){  
                     id = i+1;
                     bool = false
-                }
-            
-            }
-        });
 
-        if (bool == true){
-            document.getElementById(id+"check").setAttribute("checked","")
+                }
+            });
+
+            if (bool == true){
+                id = i+1
+                document.getElementById(id+"check").setAttribute("checked","")
+            }
         }
+
+        
     }
     
     
@@ -69,18 +72,20 @@ function supression(id){                                    //fait apparaitre ou
 
 function repCheckbox(id){                                   //message si checkbox est coche
 
+//alert(document.getElementById(id+"check").checked)
    if(currentRegion.name != undefined){
         matriceRegions.forEach(region => {
 
             if(region.name == currentRegion.name){
-                region.actionB(id-1)
+                
+                region.actionB(id-1, document.getElementById(id+"check").checked)
 
             }
         });
     }
     else{
         matriceRegions.forEach(region => {
-            region.actionB(id-1)
+            region.actionB(id-1, document.getElementById(id+"check").checked)
             console.log(region.name)
             console.table(region.getAction())
             

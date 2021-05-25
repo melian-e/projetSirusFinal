@@ -118,13 +118,9 @@ class Region{
         console.table(this.action)
     }
 
-    actionB(id){
-        if (this.action[id] == true){
-            this.action[id] = false;
-        }
-        else{
-            this.action[id] = true;
-        }
+    actionB(id, bool){
+        alert(bool)
+        this.action[id] = bool
     }
 
 }
