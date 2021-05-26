@@ -2,81 +2,81 @@
   "cartes": [
     {
       "titre": "Confinement",
-      "resume": "Confinez toute la zone sélectionné",
+      "resume": "Confinez toute la zone sélectionnée",
       "id": 1,
-      "mecontentement": 100
+      "mecontentement": 1000
     },
     {
       "titre": "Télétravail",
       "resume": "Vous placez tout les travailleurs qui le peuvent en télétravail",
       "id": 2,
-      "mecontentement": 30
+      "mecontentement": 300
     },
     {
       "titre": "Gestes barrières",
       "resume": "Vous imposez les gestes barrières à tous les habitants de la région",
       "id": 3,
-      "mecontentement": 40
+      "mecontentement": 400
     },
     {
       "titre": "Fermeture des écoles",
-      "resume": "Fermetures des écoles maternelles, primaires, collèges et lycées pour des cours à la maison",
+      "resume": "Fermeture des écoles maternelles, primaires, collèges et lycées pour des cours à la maison",
       "id": 4,
-      "mecontentement": 50
+      "mecontentement": 500
     },
     {
-      "titre": "Fermetures des frontières régionnales",
-      "resume": "Les déplacements avec les régions frontalières sont controlés et régulés",
+      "titre": "Fermeture des frontières régionales",
+      "resume": "Les déplacements avec les régions frontalières sont controlées et régulées",
       "id": 5,
-      "mecontentement": 35
+      "mecontentement": 350
     },
     {
       "titre": "Couvre-feu",
-      "resume": "Mis en place d'un couvre-feu entre 18h et 6h",
+      "resume": "Mise en place d'un couvre-feu entre 18h et 6h",
       "id": 6,
-      "mecontentement": 50
+      "mecontentement": 500
     },
     {
-      "titre": "Fermetures des bars et restaurants",
-      "resume": "Les bars et les restaurants sont fermés afin de ralentire la propagation",
+      "titre": "Fermeture des bars et restaurants",
+      "resume": "Les bars et les restaurants sont fermés afin de ralentir la propagation",
       "id": 7,
-      "mecontentement": 65
+      "mecontentement": 650
     },
     {
-      "titre": "Fermetures des commerces non-essentiels",
+      "titre": "Fermeture des commerces non-essentiels",
       "resume": "Seul les commerces vendant des produits de première nécessité restent ouverts",
       "id": 8,
-      "mecontentement": 40
+      "mecontentement": 400
     },
     {
       "titre": "Intervention de l'armée",
-      "resume": "L'armée est déployée sur le territoire français afin de faire respecté les règles",
+      "resume": "L'armée est déployée sur le territoire français afin de faire respecter les règles",
       "id": 9,
-      "mecontentement": 150
+      "mecontentement": 1500
     },
     {
       "titre": "Renforcement des contrôles",
       "resume": "Les contrôles sont accentués et les verbalisations sont augmentées",
       "id": 10,
-      "mecontentement": 65
+      "mecontentement": 650
     },
     {
-      "titre": "Fermetures des parcs",
-      "resume": "Les parcs sont fermés afin de limiter les réunions en extèrieur",
+      "titre": "Fermeture des parcs",
+      "resume": "Les parcs sont fermés afin de limiter les réunions en extérieur",
       "id": 11,
-      "mecontentement": 65
+      "mecontentement": 650
     },
     {
-      "titre": "Arrêt des activités sportive encadrées",
-      "resume": "Les clubs de sport, les rencontre sportive sont arrêtés afin de limiter les contacts entre les sportifs",
+      "titre": "Arrêt des activités sportives encadrées",
+      "resume": "Les clubs de sport, les rencontres sportives sont arrêtées afin de limiter les contacts entre les sportifs",
       "id": 12,
-      "mecontentement": 20
+      "mecontentement": 200
     },
     {
       "titre": "Interdiction rassemblement plus de 6 personnes",
-      "resume": "Les repas de famille sont interdit s'ils rassemblent plus de 6 personnes",
+      "resume": "Les repas de famille sont interdits s'ils rassemblent plus de 6 personnes",
       "id": 13,
-      "mecontentement": 45
+      "mecontentement": 450
     }
   ]
 }
