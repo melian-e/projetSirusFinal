@@ -1,6 +1,9 @@
 socket.emit('json', '');                                    //demande au server de l'envoie du JSON des actions
 
+let jsonSave
+
 socket.on('jsonaction', json =>{                            //reception JSON
+    jsonSave = json
 
     document.getElementById("action").innerHTML = "<h3 style='text-align:center;margin-bottom:7%; font-family:turfu;' id='actionh3'>Actions dans la region </h3>"
     
