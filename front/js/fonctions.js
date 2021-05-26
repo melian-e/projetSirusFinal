@@ -84,7 +84,7 @@ function affBordure(region){
 
     currentRegion = region;
     document.getElementById("actionh3").innerHTML = "Actions dans la region " + region.name;
-    let ad="<div><h3 style='text-align:center;font-family:turfu; margin-bottom:3%;'>Infos Régions "+region.name+"</h3> </br><i class=\"far fa-angry\" style=\"color:white; width:45px;\"></i>Mécontentement : "+region.mecontentement+"%</br><i class=\"fas fa-head-side-virus\" style=\"color:red; width:45px;\"></i>Contaminés : "+region.contamines+"</br><i class=\"fas fa-skull-crossbones\" style=\"color:green; width:45px;\"></i>Morts : "+region.morts+"</br><i class=\"fas fa-users\" style=\"color:blue; width:45px;\"></i>Population : "+region.population+"</div>";
+    let ad="<div><h3 style='text-align:center;font-family:turfu; margin-bottom:3%;'>Infos Régions "+region.name+"</h3> </br><i class=\"far fa-angry\" style=\"color:white; width:45px;\"></i>Mécontentement : "+Math.floor(((region.mecontentement*100)/region.population)*100)/100+"%</br><i class=\"fas fa-head-side-virus\" style=\"color:red; width:45px;\"></i>Contaminés : "+region.contamines+"</br><i class=\"fas fa-skull-crossbones\" style=\"color:green; width:45px;\"></i>Morts : "+region.morts+"</br><i class=\"fas fa-users\" style=\"color:blue; width:45px;\"></i>Population : "+region.population+"</div>";
     document.getElementById("regionAff").innerHTML=ad;
     
 }
@@ -598,6 +598,6 @@ function chrono(){
         min++
         sec = 0
     }
-    document.getElementById("avancement").innerHTML = "<div style='border-radius: 30px;background-color: rgb(0, 0, 0, 0.5);border: solid black; height:60%;'><h3 style='text-align:center; font-family:turfu; color: white; font-size:250%;top: 50%; transform: translateY(-50%);'>"+min+"<span style='font-size:75%;'>:</span>"+sec+" min</h3></div>"
+    document.getElementById("avancement").innerHTML = "<div style='border-radius: 30px;background-color: rgb(0, 0, 0, 0.5);border: solid black; height:60%;'><h3 style='text-align:center; font-family:turfu; color: white; font-size:250%;top: 50%; transform: translateY(-50%);'>"+min+"<span style='font-size:75%;'>:</span>"+sec+"</h3></div>"
 }
 

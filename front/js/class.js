@@ -101,7 +101,7 @@ class Region{
     constructor(name, color, mecontentement, contamines, morts, population, populationMax, recovered){
         this.name = name;
         this.color = color;
-        this.mecontentement = mecontentement;
+        this.mecontentement = 0;
         this.contamines = contamines;
         this.morts = morts;
         this.population = population;

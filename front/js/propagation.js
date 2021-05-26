@@ -1,5 +1,6 @@
 let france = new Pays(imgRegions, imgPropa, imgSatellite, 0, 0, 0, 0, 0);
 const mecontMax = 100000;
+let boolEndGame = false
 
 let matriceRegions = [];
 matriceRegions.push(new Region("Hauts-de-France", "rgb(0, 162, 217)", 0, 0, 0, 0, 5975757, 0));
@@ -44,8 +45,10 @@ document.addEventListener('DOMContentLoaded', function() {
     let randomdeplacement = 250;
     let cmpt = 0;
     setInterval(() => {
+        a = mecontentement(matriceRegions, dataFrance)
+        matriceRegions = clone(a.regions)
+        dataFrance = a.dataf
         a = propagation(matpxl, dataFrance, matriceRegions);
-        mecontentement(matriceRegions)
         matpxl = clone(a.map);
         dataFrance = a.dataPays;
         matriceRegions = clone(a.regions);
@@ -82,15 +85,49 @@ document.addEventListener('DOMContentLoaded', function() {
     
 });
 
-function mecontentement(regions){
+function mecontentement(regions, dataf){
+    let sum = 0 ;
     regions.forEach(region => {
+    
         for(let i = 0; i <= 12;i++){
-            alert(jsonSave.cartes[i].mecontentementon)
             if (region.action[i] == true){
+                region.mecontentement += jsonSave.cartes[i].mecontentement
+            }
+            
+            if(i==12){
+                region.mecontentement-= Math.floor(Math.random() * 100) + 200 ;
+            }
+            if(region.mecontentement < 0){
+                region.mecontentement = 0;
             }
         }
+
+        sum+= region.mecontentement;
     });
-    
+
+    sum = Math.floor(((sum*100)/dataf.population)*100)/100
+
+    dataf.mecontentement = sum
+
+    if((sum>1 && boolEndGame == false) || (dataf.contamines> dataf.population*0.7 && boolEndGame == false)){
+        let minuteur = min + " min "+sec
+        let message
+        if (sum>1){
+            message  = "La population en à marre des mesures de restricitions contre la propagation de la maladie et decide de se révolter"
+        }
+        else{
+            message ="Un trop grande partie de la population est contaminé, il sera difficile de revenir à une vie normale"
+        }
+        
+        swal({title: minuteur, 
+            text: message, 
+            button: "Retourner à l'accueil"}).then(()=> document.location.href="../html/index.html" )
+
+        document.getElementById("ecran").setAttribute("style","visibility:hidden;")
+        boolEndGame = true;
+    }
+
+    return {regions,dataf}
 }
 
 //%*r/255*pop/surf
