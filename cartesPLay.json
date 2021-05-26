@@ -64,37 +64,30 @@
       "mecontentement": 1.2
     },
     {
-      "titre": "Fermetures des commerces non-essentiels",
-      "resume": "Seul les commerces vendant des produits de première nécessité restent ouverts",
-      "id": 10,
-      "propagation": 0.8,
-      "mecontentement": 1.2
-    },
-    {
       "titre": "Renforcement des contrôles",
       "resume": "Les contrôles sont accentués et les verbalisations sont augmentées",
-      "id": 11,
+      "id": 10,
       "propagation": 0.8,
       "mecontentement": 1.2
     },
     {
       "titre": "Fermetures des parcs",
       "resume": "Les parcs sont fermés afin de limiter les réunions en extèrieur",
-      "id": 12,
+      "id": 11,
       "propagation": 0.8,
       "mecontentement": 1.2
     },
     {
       "titre": "Arrêt des activités sportive encadrées",
       "resume": "Les clubs de sport, les rencontre sportive sont arrêtés afin de limiter les contacts entre les sportifs",
-      "id": 13,
+      "id": 12,
       "propagation": 0.8,
       "mecontentement": 1.2
     },
     {
       "titre": "Maintient d'un évènement du calendrier",
       "resume": "Le gouvernement prend la décision de maintenir une fête du calendrier",
-      "id": 14,
+      "id": 13,
       "propagation": 1.2,
       "mecontentement": 0.8
     }
