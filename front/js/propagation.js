@@ -113,6 +113,7 @@ function mecontentement(regions, dataf){
     dataf.mecontentement = sum
 
     if((sum>80 && boolEndGame == false) || (dataf.contamines> dataf.population*0.6 && boolEndGame == false)){
+        document.getElementById("ifLose").setAttribute("src", "../style/asset/song_lose.mp3");
         let minuteur = hr + " h " + min + " min "+ sec + " s";
         let message;
         if (sum>1){
