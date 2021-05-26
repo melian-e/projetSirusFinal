@@ -36,6 +36,7 @@ body{
 }
 
   .Map {
+    padding-top:10%;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
@@ -168,4 +169,25 @@ i{
 
 h3{
   font-size:120%;
+}
+
+#ecran{
+  position:absolute;
+  height:95%;
+}
+
+#actionh3{
+  text-align:center;
+  margin-bottom:7%; 
+  font-family:turfu;
+}
+
+#avancement{
+  text-align:center;
+}
+
+#canvas1{
+  position:absolute; 
+  left:150px; 
+  top:90px;
 }

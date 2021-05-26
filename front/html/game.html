@@ -17,21 +17,19 @@
 <body onload="timer()">
     <audio src="../style/asset/song_game.mp3" autoplay loop></audio>
 
-    <div class="grid-container" id="ecran" style="position:absolute;height:95%">
+    <div class="grid-container" id="ecran">
         <div class="Infos-avancement-partie" ></div>
-        <div class="Map" style="padding-top:10%;"></div>
+        <div class="Map"></div>
         <div class="Infos-region" id="regionAff"></div>
         <div class="Filtres scroller" id="filtres"></div>
-        <div class="Liste-actions-région scroller" id="action"><h3 style='text-align:center;margin-bottom:7%; font-family:turfu;' id='actionh3'>Actions dans la region </h3></div>
-        <div class="Infos-avancement-partie" id="avancement" style="text-align:center;"></div>
+        <div class="Liste-actions-région scroller" id="action"><h3 id='actionh3'>Actions dans la region </h3></div>
+        <div class="Infos-avancement-partie" id="avancement"></div>
         <div class="Map">
             <!--Map-->
-            <canvas id="canvas1" style="position:absolute; left:150px; top:90px"></canvas>
+            <canvas id="canvas1"></canvas>
         </div>
 
     </div>
-
-    
 
     <script>
         let socket = io(); 
