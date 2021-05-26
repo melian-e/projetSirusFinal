@@ -14,6 +14,10 @@ let rot = new Array()
 let Crot = new Array()
 let taille = new Array()
 
+let easterEgg = false
+let easterEgg2 = false
+let count = 0
+
 
 for (let i = 0 ; i < number ; i++){                                                 //initialisation a 0 des paramètre
     posX[i] = 0
@@ -143,3 +147,67 @@ function draw() {                                                               
     }
 
 }
+
+function mousePressed(){
+
+    if (easterEgg == false){
+        if(mouseX < width-(width/100)-50 && mouseY > (height/100)+50 && bouton == false && (mouseX < (width*35) /100 || mouseX > width - (width*35) /100)){
+            document.getElementById("regles").setAttribute("hidden","")
+            document.getElementById("mid").setAttribute("hidden","")
+            document.getElementById("secret").removeAttribute("hidden","")
+            document.getElementById("secret2").removeAttribute("hidden","")
+
+            document.getElementById("secret").innerHTML += "<div style='position:absolute; top:5%;left: 50%; transform: translateX(-50%); text-align: center; font-family: turfu; color:white; font-size:150%;'>Débarassez vous de de 50 virus afin limiter la propagation de celui-ci et de retourner au menu</div>"
+            document.getElementById("secret2").innerHTML = "<div style='position:absolute; bottom:5%;left: 50%; transform: translateX(-50%); text-align: center; font-family: turfu; color:white; font-size:150%;'>"+count+"/50</div>"
+
+            easterEgg = true
+
+            for (let i =0; i<number;i++){
+                if(dist(mouseX, mouseY, posX[i], posY[i]) < (taille[i]/2.5)){
+                    posX[i] = 0;
+                    CposX[i] = 0;
+                    posY[i] = 0;
+                    CposY[i] = 0;
+                    rot[i] = 0;
+                    Crot[i] = 0
+                    taille[i] = 0
+                    count++;
+                    document.getElementById("secret2").innerHTML = "<div style='position:absolute; bottom:5%;left: 50%; transform: translateX(-50%); text-align: center; font-family: turfu; color:white; font-size:150%;'>"+count+"/50</div>"
+                }
+            }
+        }
+    }
+    else{
+
+        document.getElementById("secret").innerHTML += "<div style='position:absolute; top:5%;left: 50%; transform: translateX(-50%); text-align: center; font-family: turfu; color:white; font-size:150%;'>Débarassez vous de de 50 virus afin limiter la propagation de celui-ci et de retourner au menu</div>"
+        document.getElementById("secret2").innerHTML = "<div style='position:absolute; bottom:5%;left: 50%; transform: translateX(-50%); text-align: center; font-family: turfu; color:white; font-size:150%;'>"+count+"/50</div>"
+
+        easterEgg = true
+
+        for (let i =0; i<number;i++){
+            if(dist(mouseX, mouseY, posX[i], posY[i]) < (taille[i]/2.5)){
+                posX[i] = 0;
+                CposX[i] = 0;
+                posY[i] = 0;
+                CposY[i] = 0;
+                rot[i] = 0;
+                Crot[i] = 0
+                taille[i] = 0
+                count++;
+                document.getElementById("secret2").innerHTML = "<div style='position:absolute; bottom:5%;left: 50%; transform: translateX(-50%); text-align: center; font-family: turfu; color:white; font-size:150%;'>"+count+"/50</div>"
+            }
+        }
+        if (count >= 50){
+            easterEgg = false
+            count = 0
+            document.getElementById("secret").setAttribute("hidden","")
+            document.getElementById("secret2").setAttribute("hidden","")
+            document.getElementById("regles").removeAttribute("hidden","")
+            document.getElementById("mid").removeAttribute("hidden","")
+
+
+        }
+    }
+}
+    
+
