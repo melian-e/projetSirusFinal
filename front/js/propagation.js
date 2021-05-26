@@ -1,4 +1,5 @@
 let france = new Pays(imgRegions, imgPropa, imgSatellite, 0, 0, 0, 0, 0);
+const mecontMax = 100000;
 
 let matriceRegions = [];
 matriceRegions.push(new Region("Hauts-de-France", "rgb(0, 162, 217)", 0, 0, 0, 0, 5975757, 0));
@@ -44,6 +45,7 @@ document.addEventListener('DOMContentLoaded', function() {
     let cmpt = 0;
     setInterval(() => {
         a = propagation(matpxl, dataFrance, matriceRegions);
+        mecontentement(matriceRegions)
         matpxl = clone(a.map);
         dataFrance = a.dataPays;
         matriceRegions = clone(a.regions);
@@ -79,5 +81,16 @@ document.addEventListener('DOMContentLoaded', function() {
     }, 100);
     
 });
+
+function mecontentement(regions){
+    regions.forEach(region => {
+        for(let i = 0; i <= 12;i++){
+            alert(jsonSave.cartes[i].mecontentementon)
+            if (region.action[i] == true){
+            }
+        }
+    });
+    
+}
 
 //%*r/255*pop/surf

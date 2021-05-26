@@ -4,79 +4,79 @@
       "titre": "Confinement",
       "resume": "Confinez toute la zone sélectionné",
       "id": 1,
-      "mecontentement": 1.2
+      "mecontentement": 100
     },
     {
       "titre": "Télétravail",
       "resume": "Vous placez tout les travailleurs qui le peuvent en télétravail",
       "id": 2,
-      "mecontentement": 1
+      "mecontentement": 30
     },
     {
       "titre": "Gestes barrières",
       "resume": "Vous imposez les gestes barrières à tous les habitants de la région",
       "id": 3,
-      "mecontentement": 1.2
+      "mecontentement": 40
     },
     {
       "titre": "Fermeture des écoles",
       "resume": "Fermetures des écoles maternelles, primaires, collèges et lycées pour des cours à la maison",
       "id": 4,
-      "mecontentement": 1.2
+      "mecontentement": 50
     },
     {
       "titre": "Fermetures des frontières régionnales",
       "resume": "Les déplacements avec les régions frontalières sont controlés et régulés",
       "id": 5,
-      "mecontentement": 1.2
+      "mecontentement": 35
     },
     {
       "titre": "Couvre-feu",
       "resume": "Mis en place d'un couvre-feu entre 18h et 6h",
       "id": 6,
-      "mecontentement": 1.2
+      "mecontentement": 50
     },
     {
       "titre": "Fermetures des bars et restaurants",
       "resume": "Les bars et les restaurants sont fermés afin de ralentire la propagation",
       "id": 7,
-      "mecontentement": 1.2
+      "mecontentement": 65
     },
     {
       "titre": "Fermetures des commerces non-essentiels",
       "resume": "Seul les commerces vendant des produits de première nécessité restent ouverts",
       "id": 8,
-      "mecontentement": 1.2
+      "mecontentement": 40
     },
     {
       "titre": "Intervention de l'armée",
       "resume": "L'armée est déployée sur le territoire français afin de faire respecté les règles",
       "id": 9,
-      "mecontentement": 1.2
+      "mecontentement": 150
     },
     {
       "titre": "Renforcement des contrôles",
       "resume": "Les contrôles sont accentués et les verbalisations sont augmentées",
       "id": 10,
-      "mecontentement": 1.2
+      "mecontentement": 65
     },
     {
       "titre": "Fermetures des parcs",
       "resume": "Les parcs sont fermés afin de limiter les réunions en extèrieur",
       "id": 11,
-      "mecontentement": 1.2
+      "mecontentement": 65
     },
     {
       "titre": "Arrêt des activités sportive encadrées",
       "resume": "Les clubs de sport, les rencontre sportive sont arrêtés afin de limiter les contacts entre les sportifs",
       "id": 12,
-      "mecontentement": 1.2
+      "mecontentement": 20
     },
     {
-      "titre": "Interdiction aux rassemblements de plus de 6 personnes",
-      "resume": "Les rassemblements dans les rues et les lieux publics sont limités à 6 personnes",
+      "titre": "Interdiction rassemblement plus de 6 personnes",
+      "resume": "Les repas de famille sont interdit s'ils rassemblent plus de 6 personnes",
       "id": 13,
-      "mecontentement": 0.8
+      "mecontentement": 45
     }
   ]
 }
