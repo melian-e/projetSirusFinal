@@ -222,119 +222,119 @@ function affichage(map, type){
 function propagation(map, dataPays, regions /* + MUTATEURS */){
     console.log("propagation");
 
-    let chanceContamination = 5;
-    let chanceMort = 0.001;
-    let chanceGuerison = 0.003;
+    let chanceContamination = 10;
+    let chanceMort = 0.002;
+    let chanceGuerison = 0.006;
     if(dataPays.contamines > 10000){
         chanceMort *= 3;
     }
 
         for(let i = 0; i < map.length; i++){
-            chanceContamination = 5;
+            chanceContamination = 10;
             matriceRegions.forEach(e => {
                 if(e.name == map[i].region){
                     if(e.action[0] == true && e.action[5] == true){
                         if(e.action[8] == true){
-                            chanceContamination -= 1.3;
+                            chanceContamination -= 1.3 * 2;
                         } else if(e.action[9] == true) {
-                            chanceContamination -= 1.1;
+                            chanceContamination -= 1.1 * 2;
                         } else {
-                            chanceContamination -= 1;
+                            chanceContamination -= 1 * 2;
                         }
                     } else if(e.action[0] == true){
                         if(e.action[8] == true){
-                            chanceContamination -= 1.3;
+                            chanceContamination -= 1.3 * 2;
                         } else if(e.action[9] == true) {
-                            chanceContamination -= 1.1;
+                            chanceContamination -= 1.1 * 2;
                         } else {
-                            chanceContamination -= 1;
+                            chanceContamination -= 1 * 2;
                         }
                     } else if(e.action[5] == true){
                         if(e.action[8] == true){
-                            chanceContamination -= 0.2;
+                            chanceContamination -= 0.2 * 2;
                         } else if(e.action[9] == true) {
-                            chanceContamination -= 0.17;
+                            chanceContamination -= 0.17 * 2;
                         } else {
-                            chanceContamination -= 0.15;
+                            chanceContamination -= 0.15 * 2;
                         }
                     }
                     if(e.action[1] == true && e.action[3] == true){
                         if(e.action[8] == true){
-                            chanceContamination -= 0.33;
+                            chanceContamination -= 0.33 * 2;
                         } else if(e.action[9] == true) {
-                            chanceContamination -= 0.27;
+                            chanceContamination -= 0.27 * 2;
                         } else {
-                            chanceContamination -= 0.25;
+                            chanceContamination -= 0.25 * 2;
                         }
                     } else if(e.action[1] == true){
                         if(e.action[8] == true){
-                            chanceContamination -= 0.2;
+                            chanceContamination -= 0.2 * 2;
                         } else if(e.action[9] == true) {
-                            chanceContamination -= 0.17;
+                            chanceContamination -= 0.17 * 2;
                         } else {
-                            chanceContamination -= 0.15;
+                            chanceContamination -= 0.15 * 2;
                         }
                     } else if(e.action[3] == true){
                         if(e.action[8] == true){
-                            chanceContamination -= 0.13;
+                            chanceContamination -= 0.13 * 2;
                         } else if(e.action[9] == true) {
-                            chanceContamination -= 0.11;
+                            chanceContamination -= 0.11 * 2;
                         } else {
-                            chanceContamination -= 0.1;
+                            chanceContamination -= 0.1 * 2;
                         }
                     }
                     if(e.action[2] == true){
                         if(e.action[8] == true){
-                            chanceContamination -= 0.4;
+                            chanceContamination -= 0.4 * 2;
                         } else if(e.action[9] == true) {
-                            chanceContamination -= 0.33;
+                            chanceContamination -= 0.33 * 2;
                         } else {
-                            chanceContamination -= 0.3;
+                            chanceContamination -= 0.3 * 2;
                         }
                     }
                     if(e.action[0] == false && e.action[5] == false && e.action[6] == true){
                         if(e.action[8] == true){
-                            chanceContamination -= 0.065;
+                            chanceContamination -= 0.065 * 2;
                         } else if(e.action[9] == true) {
-                            chanceContamination -= 0.055;
+                            chanceContamination -= 0.055 * 2;
                         } else {
-                            chanceContamination -= 0.05;
+                            chanceContamination -= 0.05 * 2;
                         }
                     }
                     if(e.action[0] == false && e.action[5] == false && e.action[7] == true){
                         if(e.action[8] == true){
-                            chanceContamination -= 0.065;
+                            chanceContamination -= 0.065 * 2;
                         } else if(e.action[9] == true) {
-                            chanceContamination -= 0.055;
+                            chanceContamination -= 0.055 * 2;
                         } else {
-                            chanceContamination -= 0.05;
+                            chanceContamination -= 0.05 * 2;
                         }
                     }
                     if(e.action[0] == false && e.action[5] == false && e.action[10] == true){
                         if(e.action[8] == true){
-                            chanceContamination -= 0.026;
+                            chanceContamination -= 0.026 * 2;
                         } else if(e.action[9] == true) {
-                            chanceContamination -= 0.022;
+                            chanceContamination -= 0.022 * 2;
                         } else {
-                            chanceContamination -= 0.02;
+                            chanceContamination -= 0.02 * 2;
                         }
                     }
                     if(e.action[0] == false && e.action[5] == false && e.action[11] == true){
                         if(e.action[8] == true){
-                            chanceContamination -= 0.04;
+                            chanceContamination -= 0.04 * 2;
                         } else if(e.action[9] == true) {
-                            chanceContamination -= 0.033;
+                            chanceContamination -= 0.033 * 2;
                         } else {
-                            chanceContamination -= 0.03;
+                            chanceContamination -= 0.03 * 2;
                         }
                     }
                     if(e.action[0] == false && e.action[5] == false && e.action[12] == true){
                         if(e.action[8] == true){
-                            chanceContamination -= 0.12;
+                            chanceContamination -= 0.12 * 2;
                         } else if(e.action[9] == true) {
-                            chanceContamination -= 0.088;
+                            chanceContamination -= 0.088 * 2;
                         } else {
-                            chanceContamination -= 0.08;
+                            chanceContamination -= 0.08 * 2;
                         }
                     }
                 }
@@ -601,15 +601,13 @@ function chrono(){
     }
     let tmp = "<div style='border-radius: 30px;background-color: rgb(0, 0, 0, 0.5);border: solid black; height:60%;'><h3 style='text-align:center; font-family:turfu; color: white; font-size:250%;top: 50%; transform: translateY(-50%);'>" + hr + "<span style='font-size:75%;'>:</span>";
     if(min < 10){
-        tmp += "0" + min+"<span style='font-size:75%;'>:</span>";
-    } else {
-        tmp += min+"<span style='font-size:75%;'>:</span>";
+        tmp += "0";
     }
+    tmp += min+"<span style='font-size:75%;'>:</span>";
     if(sec < 10){
-        tmp += "0" + sec+"</h3></div>";
-    } else {
-        tmp += sec+"</h3></div>";
+        tmp += "0";
     }
+    tmp += sec+"</h3></div>";
     document.getElementById("avancement").innerHTML = tmp;
 }
 
