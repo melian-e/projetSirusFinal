@@ -71,7 +71,6 @@ function supression(id){                                    //fait apparaitre ou
 
 function repCheckbox(id){                                   //message si checkbox est coche
 
-//alert(document.getElementById(id+"check").checked)
    if(currentRegion.name != undefined){
         matriceRegions.forEach(region => {
 

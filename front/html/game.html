@@ -12,15 +12,15 @@
     <script src="../js/class.js"></script>
     <script src="../js/imagesBase64.js"></script>
 </head>
-<body>
+<body onload="timer()">
 
     <div class="grid-container" id="ecran" style="position:absolute;height:95%">
-        <div class="Infos-avancement-partie"><h3 style="text-align:center; font-family:turfu; color: white">Avancement</h3></div>
+        <div class="Infos-avancement-partie" ></div>
         <div class="Map" style="padding-top:10%;"></div>
         <div class="Infos-region" id="regionAff"></div>
         <div class="Filtres scroller" id="filtres"></div>
         <div class="Liste-actions-région scroller" id="action"><h3 style='text-align:center;margin-bottom:7%; font-family:turfu;' id='actionh3'>Actions dans la region </h3></div>
-        <div class="Infos-avancement-partie">Avancement</div>
+        <div class="Infos-avancement-partie" id="avancement" style="text-align:center;"></div>
         <div class="Map">
             <!--Map-->
             <canvas id="canvas1" style="position:absolute; left:150px; top:90px"></canvas>

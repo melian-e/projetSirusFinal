@@ -493,3 +493,21 @@ function clone(base){
     }
     return newArray;
 }
+
+
+let sec = 0;
+let min = 0;
+
+function timer(){
+    setInterval(chrono,1000)
+}
+
+function chrono(){
+    sec++
+    if (sec == 60){
+        min++
+        sec = 0
+    }
+    document.getElementById("avancement").innerHTML = "<div style='border-radius: 30px;background-color: rgb(0, 0, 0, 0.5);border: solid black; height:60%;'><h3 style='text-align:center; font-family:turfu; color: white; font-size:250%;top: 50%; transform: translateY(-50%);'>"+min+"<span style='font-size:75%;'>:</span>"+sec+" min</h3></div>"
+}
+
