@@ -85,7 +85,7 @@ document.addEventListener('DOMContentLoaded', function() {
 function mecontentement(regions){
     regions.forEach(region => {
         for(let i = 0; i <= 12;i++){
-            alert(jsonSave.cartes[i].mecontentementon)
+            //alert(jsonSave.cartes[i].mecontentement)
             if (region.action[i] == true){
             }
         }
