@@ -44,8 +44,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
     let randomdeplacement = 250;
     let cmpt = 0;
-    setInterval(() => {
-        a = mecontentement(matriceRegions, dataFrance)
+    let boucle = setInterval(() => {
+        a = mecontentement(matriceRegions, dataFrance);
+        if(a.boolEndGame == true){
+            clearInterval(boucle);
+        }
         matriceRegions = clone(a.regions)
         dataFrance = a.dataf
         a = propagation(matpxl, dataFrance, matriceRegions);
@@ -109,14 +112,14 @@ function mecontentement(regions, dataf){
 
     dataf.mecontentement = sum
 
-    if((sum>1 && boolEndGame == false) || (dataf.contamines> dataf.population*0.7 && boolEndGame == false)){
-        let minuteur = min + " min "+sec
-        let message
+    if((sum>80 && boolEndGame == false) || (dataf.contamines> dataf.population*0.7 && boolEndGame == false)){
+        let minuteur = hr + " h " + min + " min "+ sec + " s";
+        let message;
         if (sum>1){
-            message  = "La population en à marre des mesures de restricitions contre la propagation de la maladie et decide de se révolter"
+            message  = "La population en à marre des mesures de restrictions et décide de se révolter"
         }
         else{
-            message ="Un trop grande partie de la population est contaminé, il sera difficile de revenir à une vie normale"
+            message ="Une trop grande partie de la population est contaminé, l'économie est en chute libre, les usines sont à l'arrêt, il sera difficile de revenir à une situation normale"
         }
         
         swal({title: minuteur, 
@@ -127,7 +130,7 @@ function mecontentement(regions, dataf){
         boolEndGame = true;
     }
 
-    return {regions,dataf}
+    return {regions, dataf, boolEndGame}
 }
 
 //%*r/255*pop/surf

@@ -86,9 +86,7 @@ function repCheckbox(id){                                   //message si checkbo
     }
     else{
         matriceRegions.forEach(region => {
-            region.actionB(id-1, document.getElementById(id+"check").checked)
-            console.log(region.name)
-            
+            region.actionB(id-1, document.getElementById(id+"check").checked);
          });
     }
     

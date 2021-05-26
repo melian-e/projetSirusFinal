@@ -27,8 +27,6 @@ const onClick = (e) => {
     let verifRegion = false;
     
     matriceRegions.forEach(region => {
-
-        console.log("test");
         
         if(region.name == matpxl[x + y * 400].region){
             affBordure(region);
@@ -123,7 +121,6 @@ divEcran.addEventListener('click', onClick2);
 
 function initPopulation(map, dataPays, regions){
     let maxReached = 0;
-    console.log(dataPays);
     while(maxReached < 13){
         maxReached = 0;
         const x = Math.floor(Math.random() * map.length);
@@ -144,7 +141,6 @@ function initPopulation(map, dataPays, regions){
             }
         });
     }
-    console.log(dataPays);
     return {map, dataPays, regions}
 }
 
@@ -587,17 +583,33 @@ function clone(base){
 
 let sec = 0;
 let min = 0;
+let hr = 0;
 
 function timer(){
     setInterval(chrono,1000)
 }
 
 function chrono(){
-    sec++
-    if (sec == 60){
-        min++
-        sec = 0
+    sec++;
+    if(min == 60){
+        hr++;
+        min = 0;
     }
-    document.getElementById("avancement").innerHTML = "<div style='border-radius: 30px;background-color: rgb(0, 0, 0, 0.5);border: solid black; height:60%;'><h3 style='text-align:center; font-family:turfu; color: white; font-size:250%;top: 50%; transform: translateY(-50%);'>"+min+"<span style='font-size:75%;'>:</span>"+sec+"</h3></div>"
+    if (sec == 60){
+        min++;
+        sec = 0;
+    }
+    let tmp = "<div style='border-radius: 30px;background-color: rgb(0, 0, 0, 0.5);border: solid black; height:60%;'><h3 style='text-align:center; font-family:turfu; color: white; font-size:250%;top: 50%; transform: translateY(-50%);'>" + hr + "<span style='font-size:75%;'>:</span>";
+    if(min < 10){
+        tmp += "0" + min+"<span style='font-size:75%;'>:</span>";
+    } else {
+        tmp += min+"<span style='font-size:75%;'>:</span>";
+    }
+    if(sec < 10){
+        tmp += "0" + sec+"</h3></div>";
+    } else {
+        tmp += sec+"</h3></div>";
+    }
+    document.getElementById("avancement").innerHTML = tmp;
 }
 
