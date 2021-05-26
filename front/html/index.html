@@ -9,20 +9,24 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.4.23/p5.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.4.23/addons/p5.dom.min.js"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script>var bouton = false;</script>
     <script src="../js/backgroundVirus.js"></script>
 </head>
 <body> 
-    <audio src="../style/asset/song_menu.mp3" autoplay loop></audio>
-    <button class="buttons btn1 effect01" style="position:absolute; top:1%; right:1%; font-family: turfu;" onclick="regles()"><p style="color:white;">?</p></button>
 
-    <div style="position:absolute; top:25%;left: 50%; transform: translateX(-50%); text-align: center; font-family: turfu;">
+    <div id="secret"></div>
+    <div id="secret2"></div>
+    <audio src="../style/asset/song_menu.mp3" autoplay loop></audio>
+    <button class="buttons btn1 effect01" id="regles" style="position:absolute; top:1%; right:1%; font-family: turfu;" onclick="regles(); bouton = true;"><p style="color:white;">?</p></button>
+
+    <div id="mid" style="position:absolute; top:25%;left: 50%; transform: translateX(-50%); text-align: center; font-family: turfu;">
         <h1 style="font-size: 500%;">Sirus Project</h1>
         <button class="btn effect01 buttons" onclick="self.location.href='game.html'"><p style="color:white;">Jouer</p></button>
     </div>
 
     <script>
         function regles(){
-            swal("Règles du jeu", "Vous dirigez la France qui est frappé par le virus Sirus, à vous de gérer l’épidémie dans votre pays en attendant que l’institut Pasteur ne découvre le vaccin.\n Votre rôle sera de limiter le plus longtemps possible la propagation du virus à l’aide de mesures de restrictions. Mais attention à ne pas être trop strict avec les mesures de limitation de propagation, si ____% de la population est mécontent à cause des mesures prisent, vous perdez, de même si _____% de la population est contaminé.")
+            swal("Règles du jeu", "Vous dirigez la France qui est frappé par le virus Sirus, à vous de gérer l’épidémie dans votre pays en attendant que l’institut Pasteur ne découvre le vaccin.\n Votre rôle sera de limiter le plus longtemps possible la propagation du virus à l’aide de mesures de restrictions. Mais attention à ne pas être trop strict avec les mesures de limitation de propagation, si ____% de la population est mécontent à cause des mesures prisent, vous perdez, de même si _____% de la population est contaminé.").then(()=> bouton = false )
         }
     </script>
 </body>
