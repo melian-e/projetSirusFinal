@@ -119,7 +119,6 @@ class Region{
     }
 
     actionB(id, bool){
-        alert(bool)
         this.action[id] = bool
     }
 
