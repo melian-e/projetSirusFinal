@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     affichage(matpxl, "population");
 
-    let randomdeplacement = 250;
+    let randomdeplacement = 125;
     let cmpt = 0;
     let boucle = setInterval(() => {
         a = mecontentement(matriceRegions, dataFrance);
@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', function() {
         matriceRegions = clone(a.regions);
 
         if((cmpt + 1) % randomdeplacement == 0){
-            randomdeplacement = Math.floor(Math.random() * 1000 + 300);
+            randomdeplacement = Math.floor(Math.random() * 500 + 150);
             a = deplacement(matpxl, dataFrance, matriceRegions);
             matpxl = clone(a.map);
             dataFrance = a.dataPays;
