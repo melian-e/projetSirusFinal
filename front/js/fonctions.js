@@ -49,7 +49,7 @@ const onClick = (e) => {
             verifRegion = true;
 
             document.getElementById("actionh3").innerHTML = "Actions dans la region " + region.name;
-            let ad="<div><h3 style='text-align:center;font-family:turfu; margin-bottom:3%;'>Infos Régions "+region.name+"</h3> </br><i class=\"far fa-angry\"></i>Mécontentement : "+region.mecontentement+"%</br><i class=\"fas fa-head-side-virus\"></i>Contaminés : "+region.contamines+"</br><i class=\"fas fa-skull-crossbones\"></i>Morts : "+region.morts+"</br><i class=\"fas fa-users\"></i>Population : "+region.population+"</div>";
+            let ad="<div><h3 style='text-align:center;font-family:turfu; margin-bottom:3%;'>Infos Régions "+region.name+"</h3> </br><i class=\"far fa-angry\" style=\"color:white; width:45px;\"></i>Mécontentement : "+region.mecontentement+"%</br><i class=\"fas fa-head-side-virus\" style=\"color:red; width:45px;\"></i>Contaminés : "+region.contamines+"</br><i class=\"fas fa-skull-crossbones\" style=\"color:green; width:45px;\"></i>Morts : "+region.morts+"</br><i class=\"fas fa-users\" style=\"color:blue; width:45px;\"></i>Population : "+region.population+"</div>";
             document.getElementById("regionAff").innerHTML=ad;
         }
     });
@@ -59,8 +59,8 @@ const onClick = (e) => {
         affichage(matpxl, currentFiltre);
         currentRegion = "";
         
-        document.getElementById("actionh3").innerHTML = "Actions dans la region France";
-        let ad="<div><h3 style='text-align:center;font-family:turfu; margin-bottom:3%;'>Infos France</h3></br><i class=\"far fa-angry\"></i>Mécontentement : "+france.mecontentement+"%</br><i class=\"fas fa-head-side-virus\"></i>Contaminés : "+france.contamines+"</br><i class=\"fas fa-skull-crossbones\"></i>Morts : "+france.morts+"</br><i class=\"fas fa-users\"></i>Population : "+france.population+"</div>";
+        document.getElementById("actionh3").innerHTML = "Actions dans la France";
+        let ad="<div><h3 style='text-align:center;font-family:turfu; margin-bottom:3%;'>Infos France</h3></br><i class=\"far fa-angry\" style=\"color:white; width:45px;\"></i>Mécontentement : "+france.mecontentement+"%</br><i class=\"fas fa-head-side-virus\" style=\"color:red; width:45px;\"></i>Contaminés : "+france.contamines+"</br><i class=\"fas fa-skull-crossbones\" style=\"color:green; width:45px;\"></i>Morts : "+france.morts+"</br><i class=\"fas fa-users\" style=\"color:blue; width:45px;\"></i>Population : "+france.population+"</div>";
         document.getElementById("regionAff").innerHTML=ad;
     }
     console.log("Coordonnées  = " + x + ' ' + y);
@@ -84,14 +84,14 @@ function affBordure(region){
 
     currentRegion = region;
     document.getElementById("actionh3").innerHTML = "Actions dans la region " + region.name;
-    let ad="<div><h3 style='text-align:center;font-family:turfu; margin-bottom:3%;'>Infos Régions "+region.name+"</h3> </br><i class=\"far fa-angry\"></i>Mécontentement : "+region.mecontentement+"%</br><i class=\"fas fa-head-side-virus\"></i>Contaminés : "+region.contamines+"</br><i class=\"fas fa-skull-crossbones\"></i>Morts : "+region.morts+"</br><i class=\"fas fa-users\"></i>Population : "+region.population+"</div>";
+    let ad="<div><h3 style='text-align:center;font-family:turfu; margin-bottom:3%;'>Infos Régions "+region.name+"</h3> </br><i class=\"far fa-angry\" style=\"color:white; width:45px;\"></i>Mécontentement : "+region.mecontentement+"%</br><i class=\"fas fa-head-side-virus\" style=\"color:red; width:45px;\"></i>Contaminés : "+region.contamines+"</br><i class=\"fas fa-skull-crossbones\" style=\"color:green; width:45px;\"></i>Morts : "+region.morts+"</br><i class=\"fas fa-users\" style=\"color:blue; width:45px;\"></i>Population : "+region.population+"</div>";
     document.getElementById("regionAff").innerHTML=ad;
     
 }
 
 function affFrance(){
     document.getElementById("actionh3").innerHTML = "Actions dans la France";
-    let ad="<div><h3 style='text-align:center;font-family:turfu; margin-bottom:3%;'>Infos France</h3> </br><i class=\"far fa-angry\"></i>Mécontentement : "+france.mecontentement+"%</br><i class=\"fas fa-head-side-virus\"></i>Contaminés : "+france.contamines+"</br><i class=\"fas fa-skull-crossbones\"></i>Morts : "+france.morts+"</br><i class=\"fas fa-users\"></i>Population : "+france.population+"</div>";
+    let ad="<div><h3 style='text-align:center;font-family:turfu; margin-bottom:3%;'>Infos France</h3></br><i class=\"far fa-angry\" style=\"color:white; width:45px;\"></i>Mécontentement : "+france.mecontentement+"%</br><i class=\"fas fa-head-side-virus\" style=\"color:red; width:45px;\"></i>Contaminés : "+france.contamines+"</br><i class=\"fas fa-skull-crossbones\" style=\"color:green; width:45px;\"></i>Morts : "+france.morts+"</br><i class=\"fas fa-users\" style=\"color:blue; width:45px;\"></i>Population : "+france.population+"</div>";
     document.getElementById("regionAff").innerHTML=ad;
 }
 
@@ -113,7 +113,7 @@ const onClick2 = (e) => {
         currentRegion = "";
 
         document.getElementById("actionh3").innerHTML = "Actions dans la France";
-        let ad="<p>Info Régions </br>France</br><i class=\"far fa-angry\"></i>Mécontentement : "+france.mecontentement+"%</br><i class=\"fas fa-head-side-virus\"></i>Contaminés : "+france.contamines+"</br><i class=\"fas fa-skull-crossbones\"></i>Morts : "+france.morts+"</br><i class=\"fas fa-users\"></i>Population : "+france.population+"</p>";
+        let ad="<div><h3 style='text-align:center;font-family:turfu; margin-bottom:3%;'>Infos France</h3></br><i class=\"far fa-angry\" style=\"color:white; width:45px;\"></i>Mécontentement : "+france.mecontentement+"%</br><i class=\"fas fa-head-side-virus\" style=\"color:red; width:45px;\"></i>Contaminés : "+france.contamines+"</br><i class=\"fas fa-skull-crossbones\" style=\"color:green; width:45px;\"></i>Morts : "+france.morts+"</br><i class=\"fas fa-users\" style=\"color:blue; width:45px;\"></i>Population : "+france.population+"</div>";
         document.getElementById("regionAff").innerHTML=ad;
     }
 };
@@ -230,7 +230,7 @@ function propagation(map, dataPays, regions /* + MUTATEURS */){
     let chanceMort = 0.001;
     let chanceGuerison = 0.003;
     if(dataPays.contamines > 10000){
-        chanceMort *= 2;
+        chanceMort *= 3;
     }
 
         for(let i = 0; i < map.length; i++){
@@ -238,36 +238,108 @@ function propagation(map, dataPays, regions /* + MUTATEURS */){
             matriceRegions.forEach(e => {
                 if(e.name == map[i].region){
                     if(e.action[0] == true && e.action[5] == true){
-                        chanceContamination -= 1;
+                        if(e.action[8] == true){
+                            chanceContamination -= 1.3;
+                        } else if(e.action[9] == true) {
+                            chanceContamination -= 1.1;
+                        } else {
+                            chanceContamination -= 1;
+                        }
                     } else if(e.action[0] == true){
-                        chanceContamination -= 1;
+                        if(e.action[8] == true){
+                            chanceContamination -= 1.3;
+                        } else if(e.action[9] == true) {
+                            chanceContamination -= 1.1;
+                        } else {
+                            chanceContamination -= 1;
+                        }
                     } else if(e.action[5] == true){
-                        chanceContamination -= 0.15;
+                        if(e.action[8] == true){
+                            chanceContamination -= 0.2;
+                        } else if(e.action[9] == true) {
+                            chanceContamination -= 0.17;
+                        } else {
+                            chanceContamination -= 0.15;
+                        }
                     }
                     if(e.action[1] == true && e.action[3] == true){
-                        chanceContamination -= 0.25;
+                        if(e.action[8] == true){
+                            chanceContamination -= 0.33;
+                        } else if(e.action[9] == true) {
+                            chanceContamination -= 0.27;
+                        } else {
+                            chanceContamination -= 0.25;
+                        }
                     } else if(e.action[1] == true){
-                        chanceContamination -= 0.15;
+                        if(e.action[8] == true){
+                            chanceContamination -= 0.2;
+                        } else if(e.action[9] == true) {
+                            chanceContamination -= 0.17;
+                        } else {
+                            chanceContamination -= 0.15;
+                        }
                     } else if(e.action[3] == true){
-                        chanceContamination -= 0.1;
+                        if(e.action[8] == true){
+                            chanceContamination -= 0.13;
+                        } else if(e.action[9] == true) {
+                            chanceContamination -= 0.11;
+                        } else {
+                            chanceContamination -= 0.1;
+                        }
                     }
                     if(e.action[2] == true){
-                        chanceContamination -= 0.3;
+                        if(e.action[8] == true){
+                            chanceContamination -= 0.4;
+                        } else if(e.action[9] == true) {
+                            chanceContamination -= 0.33;
+                        } else {
+                            chanceContamination -= 0.3;
+                        }
                     }
                     if(e.action[0] == false && e.action[5] == false && e.action[6] == true){
-                        chanceContamination -= 0.05;
+                        if(e.action[8] == true){
+                            chanceContamination -= 0.065;
+                        } else if(e.action[9] == true) {
+                            chanceContamination -= 0.055;
+                        } else {
+                            chanceContamination -= 0.05;
+                        }
                     }
                     if(e.action[0] == false && e.action[5] == false && e.action[7] == true){
-                        chanceContamination -= 0.05;
+                        if(e.action[8] == true){
+                            chanceContamination -= 0.065;
+                        } else if(e.action[9] == true) {
+                            chanceContamination -= 0.055;
+                        } else {
+                            chanceContamination -= 0.05;
+                        }
                     }
                     if(e.action[0] == false && e.action[5] == false && e.action[10] == true){
-                        chanceContamination -= 0.02;
+                        if(e.action[8] == true){
+                            chanceContamination -= 0.026;
+                        } else if(e.action[9] == true) {
+                            chanceContamination -= 0.022;
+                        } else {
+                            chanceContamination -= 0.02;
+                        }
                     }
                     if(e.action[0] == false && e.action[5] == false && e.action[11] == true){
-                        chanceContamination -= 0.03;
+                        if(e.action[8] == true){
+                            chanceContamination -= 0.04;
+                        } else if(e.action[9] == true) {
+                            chanceContamination -= 0.033;
+                        } else {
+                            chanceContamination -= 0.03;
+                        }
                     }
                     if(e.action[0] == false && e.action[5] == false && e.action[12] == true){
-                        chanceContamination -= 0.08;
+                        if(e.action[8] == true){
+                            chanceContamination -= 0.12;
+                        } else if(e.action[9] == true) {
+                            chanceContamination -= 0.088;
+                        } else {
+                            chanceContamination -= 0.08;
+                        }
                     }
                 }
             });
@@ -484,6 +556,24 @@ function propagation(map, dataPays, regions /* + MUTATEURS */){
         }
         
     return {map, dataPays, regions};
+}
+
+function deplacement(map, dataPays, regions){
+    let arrive = Math.floor(Math.random() * 400 * 400);
+    while(map[arrive].region == ""){
+        arrive = Math.floor(Math.random() * 400 * 400);
+    }
+    if(map[arrive].pop > 0){
+        map[arrive].contamines += 2;
+        regions.forEach(e => {
+            if(map[arrive].region == e.name){
+                e.contamines += 2;
+                dataPays.contamines += 2;
+                console.log('déplacement');
+            }
+        });
+    }
+    return {map, dataPays, regions}
 }
 
 function clone(base){

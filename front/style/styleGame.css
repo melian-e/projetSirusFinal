@@ -19,7 +19,7 @@ body{
     display: grid;
     gap: 1%;
     grid-template-columns: 6fr 3fr 3fr;
-    grid-template-rows: 5fr 20fr 25fr ; 
+    grid-template-rows: 5fr 18fr 27fr ; 
     grid-template-areas:
       "Infos-avancement-partie Infos-region Liste-actions-région"
       "Map Infos-region Liste-actions-région"

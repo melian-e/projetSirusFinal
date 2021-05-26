@@ -40,12 +40,22 @@ document.addEventListener('DOMContentLoaded', function() {
 
     affichage(matpxl, "population");
 
+    let randomdeplacement = 250;
     let cmpt = 0;
     setInterval(() => {
         a = propagation(matpxl, dataFrance, matriceRegions);
         matpxl = clone(a.map);
         dataFrance = a.dataPays;
         matriceRegions = clone(a.regions);
+
+        if((cmpt + 1) % randomdeplacement == 0){
+            randomdeplacement = Math.floor(Math.random() * 1000 + 300);
+            a = deplacement(matpxl, dataFrance, matriceRegions);
+            matpxl = clone(a.map);
+            dataFrance = a.dataPays;
+            matriceRegions = clone(a.regions);
+
+        }
 
         france.mecontentement = dataFrance.mecontentement;
         france.population = dataFrance.population;
@@ -63,6 +73,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 affFrance();
             }
         }
+        
         cmpt++;
 
     }, 100);
