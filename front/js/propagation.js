@@ -103,7 +103,7 @@ function mecontentement(regions, dataf){
             if(region.mecontentement < 0){
                 region.mecontentement = 0;
             }
-            if(region.mecontentement>region.population){
+            if(region.mecontentement>=region.population){
                 region.mecontentement = region.population;
             }
         }
