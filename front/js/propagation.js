@@ -98,10 +98,13 @@ function mecontentement(regions, dataf){
             }
             
             if(i==12){
-                region.mecontentement-= Math.floor(Math.random() * 100) + 200 ;
+                region.mecontentement-= Math.floor(Math.random() * 300) + 200 ;
             }
             if(region.mecontentement < 0){
                 region.mecontentement = 0;
+            }
+            if(region.mecontentement>region.population){
+                region.mecontentement = region.population;
             }
         }
 
