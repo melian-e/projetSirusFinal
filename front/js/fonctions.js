@@ -226,7 +226,7 @@ function propagation(map, dataPays, regions /* + MUTATEURS */){
     let chanceMort = 0.002;
     let chanceGuerison = 0.006;
     if(dataPays.contamines > 10000){
-        chanceMort *= 3;
+        chanceMort *= 2;
     }
 
         for(let i = 0; i < map.length; i++){
