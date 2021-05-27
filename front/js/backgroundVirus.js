@@ -157,8 +157,8 @@ function mousePressed(){
             document.getElementById("secret").removeAttribute("hidden","")
             document.getElementById("secret2").removeAttribute("hidden","")
 
-            document.getElementById("secret").innerHTML += "<div style='position:absolute; top:5%;left: 50%; transform: translateX(-50%); text-align: center; font-family: turfu; color:white; font-size:150%;'>Débarassez vous de de 50 virus afin limiter la propagation de celui-ci et de retourner au menu</div>"
-            document.getElementById("secret2").innerHTML = "<div style='position:absolute; bottom:5%;left: 50%; transform: translateX(-50%); text-align: center; font-family: turfu; color:white; font-size:150%;'>"+count+"/50</div>"
+            document.getElementById("secret").innerHTML += "<div style='position:absolute; top:5%;left: 50%; transform: translateX(-50%); text-align: center; font-family: turfu; color:white; font-size:150%;'>Débarassez vous de de 25 virus afin limiter la propagation de celui-ci et de retourner au menu</div>"
+            document.getElementById("secret2").innerHTML = "<div style='position:absolute; bottom:5%;left: 50%; transform: translateX(-50%); text-align: center; font-family: turfu; color:white; font-size:150%;'>"+count+"/25</div>"
 
             easterEgg = true
 
@@ -172,15 +172,15 @@ function mousePressed(){
                     Crot[i] = 0
                     taille[i] = 0
                     count++;
-                    document.getElementById("secret2").innerHTML = "<div style='position:absolute; bottom:5%;left: 50%; transform: translateX(-50%); text-align: center; font-family: turfu; color:white; font-size:150%;'>"+count+"/50</div>"
+                    document.getElementById("secret2").innerHTML = "<div style='position:absolute; bottom:5%;left: 50%; transform: translateX(-50%); text-align: center; font-family: turfu; color:white; font-size:150%;'>"+count+"/25</div>"
                 }
             }
         }
     }
     else{
 
-        document.getElementById("secret").innerHTML += "<div style='position:absolute; top:5%;left: 50%; transform: translateX(-50%); text-align: center; font-family: turfu; color:white; font-size:150%;'>Débarassez vous de de 50 virus afin limiter la propagation de celui-ci et de retourner au menu</div>"
-        document.getElementById("secret2").innerHTML = "<div style='position:absolute; bottom:5%;left: 50%; transform: translateX(-50%); text-align: center; font-family: turfu; color:white; font-size:150%;'>"+count+"/50</div>"
+        document.getElementById("secret").innerHTML += "<div style='position:absolute; top:5%;left: 50%; transform: translateX(-50%); text-align: center; font-family: turfu; color:white; font-size:150%;'>Débarassez vous de de 25 virus afin limiter la propagation de celui-ci et de retourner au menu</div>"
+        document.getElementById("secret2").innerHTML = "<div style='position:absolute; bottom:5%;left: 50%; transform: translateX(-50%); text-align: center; font-family: turfu; color:white; font-size:150%;'>"+count+"/25</div>"
 
         easterEgg = true
 
@@ -194,10 +194,10 @@ function mousePressed(){
                 Crot[i] = 0
                 taille[i] = 0
                 count++;
-                document.getElementById("secret2").innerHTML = "<div style='position:absolute; bottom:5%;left: 50%; transform: translateX(-50%); text-align: center; font-family: turfu; color:white; font-size:150%;'>"+count+"/50</div>"
+                document.getElementById("secret2").innerHTML = "<div style='position:absolute; bottom:5%;left: 50%; transform: translateX(-50%); text-align: center; font-family: turfu; color:white; font-size:150%;'>"+count+"/25</div>"
             }
         }
-        if (count >= 50){
+        if (count >= 25){
             easterEgg = false
             count = 0
             document.getElementById("secret").setAttribute("hidden","")
