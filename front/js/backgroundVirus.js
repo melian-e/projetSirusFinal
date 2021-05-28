@@ -209,3 +209,7 @@ function mousePressed(){
         }
     }
 }
+
+
+
+document.getElementById("ifLose").volume = 0.3;

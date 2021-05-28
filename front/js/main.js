@@ -161,3 +161,4 @@ cvns.style.height = hauteurfenetre * 0.73 + "px";
 cvns.style.width = hauteurfenetre * 0.73 + "px";
 cvns.style.left = hauteurfenetre * 0.098 + "px";
 cvns.style.top = hauteurfenetre * 0.17 + "px";
+

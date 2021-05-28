@@ -115,12 +115,12 @@ function mecontentement(regions, dataf){
 
     dataf.mecontentement = sum
 
-    if((sum>80 && boolEndGame == false) || (dataf.contamines> dataf.population*0.6 && boolEndGame == false)){
+    if((sum>50 && boolEndGame == false) || (dataf.contamines> dataf.population*0.6 && boolEndGame == false)){
         document.getElementById("ifLose").setAttribute("src", "../style/asset/song_lose.mp3");
         let minuteur = hr + " h " + min + " min "+ sec + " s";
         let message;
         if (sum>1){
-            message  = "La population en à marre des mesures de restrictions et décide de se révolter"
+            message  = "La population en a marre des mesures de restrictions et décide de se révolter"
         }
         else{
             message ="Une trop grande partie de la population est contaminé, l'économie est en chute libre, les usines sont à l'arrêt, il sera difficile de revenir à une situation normale"
